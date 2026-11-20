@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elizabeth Lopez — WordPress Developer & Technical SEO Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-parchment: #FBF8F1;
+    --card-bg: #FFFFFF;
+    --ink-primary: #1A181B;
+    --ink-muted: #555159;
+    --border-ink: #1A181B;
+    --accent-lilac: #D8C7FF;
+    --accent-royal: #2845D6;
+    --accent-crimson: #B8293D;
+    --accent-gold: #F5C84C;
+    --metric-bg: #F4F0FA;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: var(--bg-parchment);
+    color: var(--ink-primary);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    padding: 32px 20px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  /* Compact Recruiter Header */
+  .header-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-ink);
+    box-shadow: 6px 6px 0px var(--border-ink);
+    padding: 32px 36px;
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    background: var(--accent-lilac);
+    border: 1.5px solid var(--border-ink);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    margin-bottom: 14px;
+  }
+
+  h1 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    letter-spacing: -0.02em;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--ink-muted);
+    max-width: 760px;
+    margin-bottom: 22px;
+  }
+
+  .action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-gold);
+    color: var(--ink-primary);
+    border: 2px solid var(--border-ink);
+    box-shadow: 3px 3px 0px var(--border-ink);
+    padding: 10px 18px;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+  }
+
+  .btn-primary:hover, .btn-small:hover {
+    transform: translate(-1px, -1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--card-bg);
+    color: var(--ink-primary);
+    border: 1.5px solid var(--border-ink);
+    padding: 10px 16px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .location-tag {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-left: auto;
+  }
+
+  /* Section Label */
+  .section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--border-ink);
+    padding-bottom: 8px;
+  }
+
+  .section-heading h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.35rem;
+    font-weight: 700;
+  }
+
+  .section-heading span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--accent-royal);
+  }
+
+  /* Full-Width Stacked Case Study Rows */
+  .case-study {
+    background: var(--card-bg);
+    border: 2px solid var(--border-ink);
+    box-shadow: 5px 5px 0px var(--border-ink);
+    padding: 28px 32px;
+    margin-bottom: 28px;
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 28px;
+    align-items: stretch;
+  }
+
+  .case-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: var(--accent-crimson);
+    margin-bottom: 4px;
+  }
+
+  .case-left h3 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.45rem;
+    line-height: 1.25;
+    margin-bottom: 2px;
+  }
+
+  .case-subhead {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+
+  .case-desc {
+    font-size: 0.94rem;
+    color: var(--ink-primary);
+    margin-bottom: 14px;
+  }
+
+  .case-bullets {
+    list-style: none;
+    margin-bottom: 16px;
+  }
+
+  .case-bullets li {
+    position: relative;
+    padding-left: 18px;
+    font-size: 0.93rem;
+    color: var(--ink-primary);
+    margin-bottom: 8px;
+  }
+
+  .case-bullets li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 0.75rem;
+    color: var(--accent-royal);
+  }
+
+  .case-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .btn-small {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-gold);
+    color: var(--ink-primary);
+    border: 1.5px solid var(--border-ink);
+    box-shadow: 2px 2px 0px var(--border-ink);
+    padding: 7px 13px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: transform 0.1s ease;
+  }
+
+  .tech-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  .pill {
+    background: var(--bg-parchment);
+    border: 1.5px solid var(--border-ink);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 3px 10px;
+  }
+
+  /* Right Side Metrics Callout Box */
+  .case-right {
+    background: var(--metric-bg);
+    border: 1.5px solid var(--border-ink);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .device-mockup-wrap {
+    border-bottom: 1.5px solid rgba(26, 24, 27, 0.25);
+    padding-bottom: 14px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .device-mockup-wrap img {
+    width: 100%;
+    max-width: 310px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .metric-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-muted);
+    margin-bottom: 2px;
+  }
+
+  .metric-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 1px dashed rgba(26, 24, 27, 0.25);
+    padding-bottom: 10px;
+  }
+
+  .metric-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .metric-big {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-royal);
+    line-height: 1;
+  }
+
+  .metric-compare {
+    text-align: right;
+    font-size: 0.8rem;
+    color: var(--ink-muted);
+  }
+
+  .metric-compare strong {
+    display: block;
+    color: var(--ink-primary);
+    font-size: 0.85rem;
+  }
+
+  /* About & Contact Footer Block */
+  .about-card {
+    background: var(--card-bg);
+    border: 2px solid var(--border-ink);
+    box-shadow: 5px 5px 0px var(--border-ink);
+    padding: 32px 36px;
+    margin-top: 36px;
+  }
+
+  .about-card h2 {
+    font-family: 'Fraunces', Georgia, serif;
+    font-size: 1.45rem;
+    margin-bottom: 14px;
+  }
+
+  .about-card p {
+    font-size: 0.96rem;
+    color: var(--ink-primary);
+    margin-bottom: 14px;
+  }
+
+  .about-card p:last-of-type {
+    margin-bottom: 22px;
+  }
+
+  .contact-strip {
+    border-top: 1.5px solid var(--border-ink);
+    padding-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .case-study {
+      grid-template-columns: 1fr;
+      padding: 22px 20px;
+    }
+    .header-card, .about-card {
+      padding: 24px 20px;
+    }
+    .location-tag {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- COMPACT HEADER -->
+  <header class="header-card">
+    <div class="eyebrow">Selected Work & Performance Benchmarks</div>
+    <h1>Elizabeth Lopez</h1>
+    <p class="subtitle">
+      WordPress Developer & Technical SEO Specialist with 5+ years building high-converting Elementor and WPBakery architectures, engineering sub-second Core Web Vitals performance, and scaling local search visibility.
+    </p>
+    <div class="action-row">
+      <a href="mailto:Elizabethg190@gmail.com" class="btn-primary">Get in Touch</a>
+      <a href="./Elizabeth-Lopez-Resume.pdf" target="_blank" class="btn-secondary">Download Resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/elizabethlopeztx" target="_blank" class="btn-secondary">LinkedIn ↗</a>
+      <span class="location-tag">📍 San Antonio, TX • Open to Remote</span>
+    </div>
+  </header>
+
+  <!-- CASE STUDIES SECTION -->
+  <div class="section-heading">
+    <h2>Featured Case Studies</h2>
+    <span>Core Web Vitals • Local SEO • Architecture</span>
+  </div>
+
+  <!-- CASE STUDY 1: MADE IN THE SHADE -->
+  <article class="case-study">
+    <div class="case-left">
+      <div class="case-tag">Performance & Local SEO Overhaul</div>
+      <h3>Made in the Shade</h3>
+      <div class="case-subhead">San Antonio, TX | April 2026</div>
+      <p class="case-desc">
+        Rebuilt a mobile-first, conversion-focused service page using WPBakery, crafted to capture local San Antonio homeowners.
+      </p>
+      <ul class="case-bullets">
+        <li>The hero features immediate form visibility and a trust bar to engage prospective clients, plus a click-to-call feature in the top navigation menu. The content has been overhauled with intentional, SEO-focused copy around South Texas heat, energy efficiency, and real cost savings. Included is a personal intro spotlighting the owners’ decades of hands-on industry experience to bolster client trust and transparency.</li>
+        <li>Converted high-resolution imagery to compressed next-gen WebP formats, eliminated layout shifts (CLS), and configured WP Rocket with custom JavaScript delay execution.</li>
+        <li>Authored and validated custom JSON-LD Structured Data (LocalBusiness, ratings, and FAQ rich snippets) to strengthen Local Map Pack visibility.</li>
+      </ul>
+      <div class="case-actions">
+        <a href="./MITS-Full-Layout.pdf" target="_blank" class="btn-small">View Full Layout ↗</a>
+        <a href="./MITS-Project-Report.pdf" target="_blank" class="btn-small">View Project Details ↗</a>
+      </div>
+      <div class="tech-pills">
+        <span class="pill">WordPress</span>
+        <span class="pill">WPBakery</span>
+        <span class="pill">WP Rocket</span>
+        <span class="pill">WebP Optimization</span>
+        <span class="pill">JSON-LD Schema</span>
+        <span class="pill">Core Web Vitals</span>
+      </div>
+    </div>
+    <div class="case-right">
+      <div class="device-mockup-wrap">
+        <img src="./mits-devices.png" alt="Made in the Shade desktop and mobile responsive mockup">
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Desktop PageSpeed</div>
+          <div class="metric-big">96/100</div>
+        </div>
+        <div class="metric-compare">
+          <strong>vs. 43/100</strong>
+          Primary Local Competitor
+        </div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Mobile PageSpeed</div>
+          <div class="metric-big">84/100</div>
+        </div>
+        <div class="metric-compare">
+          <strong>vs. 37/100</strong>
+          Primary Local Competitor
+        </div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Stability & Render</div>
+          <div class="metric-big">0 Errors</div>
+        </div>
+        <div class="metric-compare">
+          <strong>Instant Paint</strong>
+          Competitor timed out in tests
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE STUDY 2: AGENCY PORTFOLIO -->
+  <article class="case-study">
+    <div class="case-left">
+      <div class="case-tag">Multi-Location Agency Portfolio (200+ Sites)</div>
+      <h3>Scalable Service-focused Web Architecture</h3>
+      <div class="case-subhead">Agency & Enterprise Environments | 2021 – 2026</div>
+      <ul class="case-bullets">
+        <li>Built and maintained scalable, location-based WordPress landing pages across 200+ client environments using Elementor, Divi, HTML5, CSS3, and JavaScript.</li>
+        <li>Executed comprehensive site speed audits, combining server-side caching, CDN rules, and asset compression to eliminate render-blocking bottlenecks.</li>
+        <li>Managed zero-downtime site launches, DNS cutovers, SSL setups, security audits, and bulk 301 redirect migrations via SSH and WP-CLI to protect SEO equity.</li>
+      </ul>
+      <div class="tech-pills">
+        <span class="pill">Elementor & Divi</span>
+        <span class="pill">Technical SEO</span>
+        <span class="pill">SSH & WP-CLI</span>
+        <span class="pill">CDN & Caching</span>
+        <span class="pill">301 Migrations</span>
+        <span class="pill">Yoast & RankMath</span>
+      </div>
+    </div>
+    <div class="case-right">
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Speed Score Gains</div>
+          <div class="metric-big">+70%</div>
+        </div>
+        <div class="metric-compare">
+          <strong>Core Web Vitals</strong>
+          Across priority client sites
+        </div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Portfolio Oversight</div>
+          <div class="metric-big">200+</div>
+        </div>
+        <div class="metric-compare">
+          <strong>30+ Weekly Tickets</strong>
+          Launches, audits & fixes
+        </div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Schema & SEO</div>
+          <div class="metric-big">100%</div>
+        </div>
+        <div class="metric-compare">
+          <strong>Valid Markup</strong>
+          Zero ranking loss on cutover
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- CASE STUDY 3: CUSTOM EDITORIAL BUILD -->
+  <article class="case-study">
+    <div class="case-left">
+      <div class="case-tag">Editorial Brand & Front-End Architecture</div>
+      <h3>Custom Editorial WordPress Flagship</h3>
+      <div class="case-subhead">Custom UI & Performance Engineering | 2026</div>
+      <ul class="case-bullets">
+        <li>Designed and built a custom editorial-style WordPress architecture from scratch in Elementor Pro with custom CSS layout grids, interactive cards, and mobile-first breakpoints.</li>
+        <li>Engineered lightweight asset delivery and clean semantic HTML5 structure to achieve fast mobile load performance without bloated third-party plugins.</li>
+      </ul>
+      <div class="tech-pills">
+        <span class="pill">Elementor Pro</span>
+        <span class="pill">Custom CSS3</span>
+        <span class="pill">Responsive UI</span>
+        <span class="pill">Performance Tuning</span>
+      </div>
+    </div>
+    <div class="case-right">
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Build Stack</div>
+          <div class="metric-big">100%</div>
+        </div>
+        <div class="metric-compare">
+          <strong>Custom Styled</strong>
+          Zero template bloat
+        </div>
+      </div>
+      <div class="metric-row">
+        <div>
+          <div class="metric-label">Mobile UX</div>
+          <div class="metric-big">First</div>
+        </div>
+        <div class="metric-compare">
+          <strong>Accessible Grids</strong>
+          Built for instant conversion
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- BLENDED ABOUT SECTION -->
+  <section class="about-card" id="contact">
+    <h2>About Me</h2>
+    <p>
+      <strong>Howdy! I’m Liz, a San Antonio-based web developer and technical SEO Specialist</strong> with 5+ years in WordPress architecture and 10+ years in technical infrastructure. Across agency and enterprise roles—including Funnel Boost Media, Leadhub, and WP Engine—I’ve overseen portfolios of 200+ websites, personally maintaining 30+ high-priority environments weekly while balancing clean, responsive design with aggressive Core Web Vitals and page speed goals (achieving score improvements up to 70%).
+    </p>
+    <p>
+      Whether I’m architecting responsive Elementor builds, scaling location-based landing pages with 100% valid JSON-LD schema, or diagnosing server and Core Web Vitals bottlenecks via SSH and WP-CLI, I focus on translating complex technical systems into fast, high-converting user experiences.
+    </p>
+    <p>
+      When I’m not building websites or tuning site performance, I enjoy mixing DJ sets, craft nights with friends, playing video games, walking local trails and greenways, and camping in the Texas Hill Country with my dog, Olive.
+    </p>
+    <div class="contact-strip">
+      <span>📧 Elizabethg190@gmail.com</span>
+      <span>📱 210.381.9804</span>
+      <span>📍 San Antonio, TX (Open to Remote)</span>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
